@@ -66,3 +66,8 @@ function ajaxCall(dataSku) {
         }
     };
 }
+
+
+function removeAllCards() {
+    document.getElementById("cards-holder").innerHTML = "";
+}
