@@ -12,9 +12,6 @@ posts.forEach(post => {
 
 
 
-
-
-
 function ajaxCall(dataSku) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", `https://jsonplaceholder.typicode.com/posts/${dataSku}`, true);
@@ -40,6 +37,12 @@ function ajaxCall(dataSku) {
                 divCard.setAttribute('data-sku', dataSku);
                 divCard.setAttribute('class', 'card');
 
+                var cardButton = document.createElement("button");
+                cardButton.setAttribute('class', 'remove');
+                var cardBtnText = document.createTextNode('X');
+                cardButton.appendChild(cardBtnText);
+                divCard.appendChild(cardButton);
+
                 var cardH2 = document.createElement("h2");
                 var cardTitle = document.createTextNode(post.title);
                 cardH2.appendChild(cardTitle);
@@ -53,6 +56,13 @@ function ajaxCall(dataSku) {
                 var cardHolder = document.getElementById("cards-holder");
                 cardHolder.appendChild(divCard);
             }
+
+            const removeCards = document.querySelectorAll('.card');
+            removeCards.forEach(removeCard => {
+            	removeCard.addEventListener('click',(e) => {
+                    removeCard.remove();
+            	})
+            })
         }
     };
 }
