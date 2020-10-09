@@ -18,7 +18,7 @@ cardsRemoverBtn.addEventListener("click", removeAllCards);
 
 
 
-function ajaxCall(dataSku) {		// chiamata ajax che recupera le info della card e se non e' gia presente la inserisce
+function ajaxCall(dataSku) {		// ajax che recupera le info della card, se non e' gia presente la inserisce
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", `https://jsonplaceholder.typicode.com/posts/${dataSku}`, true);
     xhttp.send();
