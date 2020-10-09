@@ -104,26 +104,26 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+// cliccando su un elemento del card trigger
 var posts = document.querySelectorAll('#card-trigger li a');
 posts.forEach(function (post) {
   post.addEventListener('click', function (e) {
-    // console.log(post.dataset.sku);
     var dataSku = post.dataset.sku;
     ajaxCall(dataSku);
   });
 }); // per rimuovere tutte le cards
 
 var cardsRemoverBtn = document.getElementById("remover");
-cardsRemoverBtn.addEventListener("click", removeAllCards); // far apparire l'hamburger menu
+cardsRemoverBtn.addEventListener("click", removeAllCards); // per far apparire l'hamburger menu
 
 var openMenu = document.getElementById("menu");
-openMenu.addEventListener("click", apriMenu); // far scomparire l'hamburger menu
+openMenu.addEventListener("click", apriMenu); // per far scomparire l'hamburger menu
 
 var closeMenu = document.getElementById("close");
 closeMenu.addEventListener("click", chiudiMenu); // funzioni
 
 function ajaxCall(dataSku) {
-  // ajax che recupera le info della card, se non e' gia presente la inserisce
+  // ajax che recupera le info della card, se non e' gia presente la inserisce e permette di eliminare la singola card
   var xhttp = new XMLHttpRequest();
   xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts/".concat(dataSku), true);
   xhttp.send();

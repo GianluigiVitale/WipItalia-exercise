@@ -1,7 +1,7 @@
+// cliccando su un elemento del card trigger
 const posts = document.querySelectorAll('#card-trigger li a');
 posts.forEach(post => {
 	post.addEventListener('click',(e) => {
-		// console.log(post.dataset.sku);
 		var dataSku = post.dataset.sku;
 
         ajaxCall(dataSku);
@@ -9,16 +9,16 @@ posts.forEach(post => {
 })
 
 // per rimuovere tutte le cards
-var cardsRemoverBtn = document.getElementById("remover");
+const cardsRemoverBtn = document.getElementById("remover");
 cardsRemoverBtn.addEventListener("click", removeAllCards);
 
-// far apparire l'hamburger menu
-var openMenu = document.getElementById("menu");
+// per far apparire l'hamburger menu
+const openMenu = document.getElementById("menu");
 openMenu.addEventListener("click", apriMenu);
 
 
-// far scomparire l'hamburger menu
-var closeMenu = document.getElementById("close");
+// per far scomparire l'hamburger menu
+const closeMenu = document.getElementById("close");
 closeMenu.addEventListener("click", chiudiMenu);
 
 
@@ -27,7 +27,7 @@ closeMenu.addEventListener("click", chiudiMenu);
 
 
 
-function ajaxCall(dataSku) {		// ajax che recupera le info della card, se non e' gia presente la inserisce
+function ajaxCall(dataSku) {		// ajax che recupera le info della card, se non e' gia presente la inserisce e permette di eliminare la singola card
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", `https://jsonplaceholder.typicode.com/posts/${dataSku}`, true);
     xhttp.send();
