@@ -65,6 +65,10 @@ li {
   display: none !important;
 }
 
+.opacity {
+  opacity: 0.25;
+}
+
 /* FINE STILE GENERALE */
 
 /* NAV */
@@ -156,14 +160,15 @@ nav .square {
 
 /* MEDIA QUERY */
 
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 576px) {
   nav {
-    position: relative;
+    position: absolute;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     display: none;
-    width: 100vw;
+    width: calc(100vw - 20px);
     height: 100vh;
     border: none;
   }
@@ -173,19 +178,20 @@ nav .square {
     color: #747474;
     position: absolute;
     top: 25px;
-  }
-
-  .delete-all-button {
-    right: 0;
+    right: 20px;
   }
 
   .fa-bars {
-    right: 20px;
     display: block;
   }
 
   #cards-holder {
-    margin-top: 20px;
+    margin-top: 60px;
+  }
+
+  .card {
+    margin: 35px 35px;
+    width: 100%;
   }
 }
 

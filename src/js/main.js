@@ -13,13 +13,13 @@ var cardsRemoverBtn = document.getElementById("remover");
 cardsRemoverBtn.addEventListener("click", removeAllCards);
 
 // far apparire l'hamburger menu
-var menu = document.getElementById("menu");
-menu.addEventListener("click", appearMenu);
+var openMenu = document.getElementById("menu");
+openMenu.addEventListener("click", apriMenu);
 
 
 // far scomparire l'hamburger menu
 var closeMenu = document.getElementById("close");
-closeMenu.addEventListener("click", closeMenu);
+closeMenu.addEventListener("click", chiudiMenu);
 
 
 
@@ -105,7 +105,7 @@ function bgAssign(divCard, dataSku) {		// assegna la classe card e il colore di 
 }
 
 
-function appearMenu() {		// fa apparire l'hamburger menu
+function apriMenu() {		// fa apparire l'hamburger menu
 	var cardNav = document.getElementById("card__nav");
 	cardNav.classList.add("visible-flex");
 
@@ -113,15 +113,21 @@ function appearMenu() {		// fa apparire l'hamburger menu
 	close.classList.remove("not-active");
 
 	menu.classList.add('not-active');
+
+	var cardsOpacity = document.getElementById("cards-holder");
+	cardsOpacity.classList.add("opacity");
 }
 
 
-function closeMenu() {		// fa scomparire l'hamburger menu
+function chiudiMenu() {		// fa scomparire l'hamburger menu
 	var cardNav = document.getElementById("card__nav");
 	cardNav.classList.remove("visible-flex");
 
 	var menu = document.getElementById("menu");
 	menu.classList.remove("not-active");
 
-	closeMenu.classList.remove('not-active');
+	closeMenu.classList.add('not-active');
+
+	var cardsOpacity = document.getElementById("cards-holder");
+	cardsOpacity.classList.remove("opacity");
 }
