@@ -5,14 +5,20 @@ posts.forEach(post => {
 		var dataSku = post.dataset.sku;
 
         ajaxCall(dataSku);
-
 	})
 })
 
+// per rimuovere tutte le cards
+var cardsRemoverBtn = document.getElementById("remover");
+cardsRemoverBtn.addEventListener("click", removeAllCards);
 
 
 
-function ajaxCall(dataSku) {
+// funzioni
+
+
+
+function ajaxCall(dataSku) {		// chiamata ajax che recupera le info della card e se non e' gia presente la inserisce
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", `https://jsonplaceholder.typicode.com/posts/${dataSku}`, true);
     xhttp.send();
@@ -21,6 +27,7 @@ function ajaxCall(dataSku) {
             var post = JSON.parse(xhttp.responseText);
 
 
+			// prima di inserire la card controllo che non sia gia' presente
             var cardPresente = false;
 
             const cards = document.querySelectorAll('#cards-holder div');
@@ -31,6 +38,7 @@ function ajaxCall(dataSku) {
                 }
             })
 
+			// inserisco la card
             if (!cardPresente) {
 
                 var divCard = document.createElement("div");
@@ -43,31 +51,33 @@ function ajaxCall(dataSku) {
                 cardButton.appendChild(cardBtnText);
                 divCard.appendChild(cardButton);
 
-                var cardH2 = document.createElement("h2");
-                var cardTitle = document.createTextNode(post.title);
-                cardH2.appendChild(cardTitle);
-                divCard.appendChild(cardH2);
-
-                var cardP = document.createElement("p");
-                var cardBody = document.createTextNode(post.body);
-                cardP.appendChild(cardBody);
-                divCard.appendChild(cardP);
+				cardElement(divCard, "h2", post.title);
+				cardElement(divCard, "p", post.body);
 
                 var cardHolder = document.getElementById("cards-holder");
                 cardHolder.appendChild(divCard);
             }
 
-            const removeCards = document.querySelectorAll('.card');
-            removeCards.forEach(removeCard => {
-            	removeCard.addEventListener('click',(e) => {
-                    removeCard.remove();
-            	})
-            })
+			// per la singola card
+			const removeCards = document.querySelectorAll('.card');
+			removeCards.forEach(removeCard => {
+				removeCard.addEventListener('click',(e) => {
+					removeCard.remove();
+				})
+			})
         }
     };
 }
 
 
-function removeAllCards() {
+function cardElement(divCard, tag, titleBody) {		// crea un tag con all'interno il testo e lo appende al div
+	var cardTag = document.createElement(tag);
+	var cardContent = document.createTextNode(titleBody);
+	cardTag.appendChild(cardContent);
+	divCard.appendChild(cardTag);
+}
+
+
+function removeAllCards() {		// rimuove tutte le cards
     document.getElementById("cards-holder").innerHTML = "";
 }
