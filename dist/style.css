@@ -1,0 +1,40 @@
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FINE RESET */
+
+/* STILE GENERALE */
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+i {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+/* FINE STILE GENERALE */
+
+/* NAV */
+
+/* FINE NAV */
+
+/* MAIN */
+
+/* FINE MAIN */
+
+/* MEDIA QUERY */
+

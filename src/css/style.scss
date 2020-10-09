@@ -1,0 +1,16 @@
+@import "partials/_variables";
+@import "partials/_mixins";
+/* RESET */
+@import "partials/_reset";
+/* FINE RESET */
+/* STILE GENERALE */
+@import "partials/_common";
+/* FINE STILE GENERALE */
+/* NAV */
+@import "partials/_nav";
+/* FINE NAV */
+/* MAIN */
+@import "partials/main";
+/* FINE MAIN */
+/* MEDIA QUERY */
+@import "partials/_mediaQuery";
