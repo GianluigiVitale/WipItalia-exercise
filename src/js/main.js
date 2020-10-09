@@ -43,7 +43,7 @@ function ajaxCall(dataSku) {		// ajax che recupera le info della card, se non e'
 
                 var divCard = document.createElement("div");
                 divCard.setAttribute('data-sku', dataSku);
-                divCard.setAttribute('class', 'card');
+				bgAssign(divCard, dataSku);
 
                 var cardButton = document.createElement("i");
                 cardButton.setAttribute('class', 'fas fa-times delete-button');
@@ -78,4 +78,18 @@ function cardElement(divCard, tag, titleBody) {		// crea un tag con all'interno 
 
 function removeAllCards() {		// rimuove tutte le cards
     document.getElementById("cards-holder").innerHTML = "";
+}
+
+function bgAssign(divCard, dataSku) {		// assegna la classe card e il colore di sfondo in base al numero
+	switch (dataSku) {
+		case '7':
+		divCard.setAttribute('class', 'card red');
+			break;
+		case '3':
+		divCard.setAttribute('class', 'card yellow');
+			break;
+		case '2':
+		divCard.setAttribute('class', 'card green');
+			break;
+	}
 }

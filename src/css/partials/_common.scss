@@ -4,6 +4,7 @@ a {
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: $primary-color;
 }
 
 i {
@@ -12,4 +13,28 @@ i {
 
 li {
     list-style: none;
+}
+
+.container {
+    display: flex;
+}
+
+.square:hover {
+    border-radius: 30%;
+}
+
+.red {
+    background-color: $red-color;
+}
+
+.yellow {
+    background-color: $yellow-color;
+}
+
+.green {
+    background-color: $green-color;
+}
+
+.delete-all-button, .red, .green, .yellow, .delete-button {
+    transition: all 0.5s;
 }

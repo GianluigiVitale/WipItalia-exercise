@@ -1,0 +1,29 @@
+nav {
+    width: 100px;
+    height: 100vh;
+    border-right: 1px solid $secondary-color;
+    margin-right: 20px;
+    padding-top: 20px;
+    color: $secondary-color;
+    line-height: 60px;
+    text-align: center;
+
+    a {
+        color: black;
+
+    }
+
+    .square {
+        width: 60px;
+        height: 60px;
+        margin: 20px 20px;
+    }
+}
+
+.delete-all-button {
+    font-size: 25px;
+}
+
+.delete-all-button:hover {
+    @include color-fontSize(white, 28px);
+}

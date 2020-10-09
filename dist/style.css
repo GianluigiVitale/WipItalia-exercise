@@ -16,6 +16,7 @@ a {
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #272727;
 }
 
 i {
@@ -26,13 +27,112 @@ li {
   list-style: none;
 }
 
+.container {
+  display: flex;
+}
+
+.square:hover {
+  border-radius: 30%;
+}
+
+.red {
+  background-color: #FF652F;
+}
+
+.yellow {
+  background-color: #FFE400;
+}
+
+.green {
+  background-color: #14A27C;
+}
+
+.delete-all-button,
+.red,
+.green,
+.yellow,
+.delete-button {
+  transition: all 0.5s;
+}
+
 /* FINE STILE GENERALE */
 
 /* NAV */
 
+nav {
+  width: 100px;
+  height: 100vh;
+  border-right: 1px solid #747474;
+  margin-right: 20px;
+  padding-top: 20px;
+  color: #747474;
+  line-height: 60px;
+  text-align: center;
+}
+
+nav a {
+  color: black;
+}
+
+nav .square {
+  width: 60px;
+  height: 60px;
+  margin: 20px 20px;
+}
+
+.delete-all-button {
+  font-size: 25px;
+}
+
+.delete-all-button:hover {
+  color: white;
+  font-size: 28px;
+}
+
 /* FINE NAV */
 
 /* MAIN */
+
+#cards-holder {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  color: #272727;
+  font-size: 20px;
+  padding: 20px;
+  margin: 25px;
+}
+
+.card:hover .delete-button {
+  display: inline-block;
+}
+
+.card h2 {
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+
+.card p {
+  font-size: 20px;
+}
+
+.delete-button {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  padding: 3px;
+  display: none;
+  color: #272727;
+}
+
+.delete-button:hover {
+  font-size: 120%;
+}
 
 /* FINE MAIN */
 
