@@ -150,10 +150,10 @@ function ajaxCall(dataSku) {
       } // per la singola card
 
 
-      var removeCards = document.querySelectorAll('.card');
+      var removeCards = document.querySelectorAll('.delete-button');
       removeCards.forEach(function (removeCard) {
         removeCard.addEventListener('click', function (e) {
-          removeCard.remove();
+          removeCard.parentElement.remove();
         });
       });
     }

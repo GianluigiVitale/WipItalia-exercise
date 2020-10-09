@@ -57,10 +57,10 @@ function ajaxCall(dataSku) {		// ajax che recupera le info della card, se non e'
             }
 
 			// per la singola card
-			const removeCards = document.querySelectorAll('.card');
+			const removeCards = document.querySelectorAll('.delete-button');
 			removeCards.forEach(removeCard => {
 				removeCard.addEventListener('click',(e) => {
-					removeCard.remove();
+					removeCard.parentElement.remove();
 				})
 			})
         }
