@@ -1,3 +1,11 @@
+// FLEX
+@mixin flex-align-column($align-direction) {
+    display: flex;
+    flex-direction: column;
+    align-items: $align-direction;
+}
+
+
 // COLORE, DIMENSIONE FONT
 @mixin color-fontSize($color, $font-size) {
     color: $color;

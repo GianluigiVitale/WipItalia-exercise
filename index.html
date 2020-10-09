@@ -8,14 +8,16 @@
     </head>
     <body>
         <div class="container">
-            <nav>
+            <i class="fas fa-bars" id="menu"></i>
+            <nav id="card__nav">
                 <ul id="card-trigger">
                     <li class="square red"><a href="javascript:void(0)" data-sku="7">post 7</a></li>
                     <li class="square yellow"><a href="javascript:void(0)" data-sku="3">post 3</a></li>
                     <li class="square green"><a href="javascript:void(0)" data-sku="2">post 2</a></li>
                 </ul>
                 <div class="square">
-                    <i class="far fa-times-circle delete-all-button" id="remover"></i>
+                    <i class="far fa-times-circle delete-all-button not-active" id="close"></i>
+                    <i class="fas fa-trash-alt" id="remover"></i>
                 </div>
             </nav>
             <main>

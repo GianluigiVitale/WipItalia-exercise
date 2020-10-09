@@ -1,5 +1,4 @@
 nav {
-    width: 100px;
     height: 100vh;
     border-right: 1px solid $secondary-color;
     margin-right: 20px;
@@ -20,10 +19,14 @@ nav {
     }
 }
 
-.delete-all-button {
-    font-size: 25px;
+.fa-bars {
+    display: none;
 }
 
-.delete-all-button:hover {
-    @include color-fontSize(white, 28px);
+.delete-all-button, .fa-trash-alt, .fa-bars {
+    font-size: 25px;
+
+    &:hover {
+        @include color-fontSize(white, 28px);
+    }
 }

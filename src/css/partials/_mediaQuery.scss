@@ -1,0 +1,30 @@
+@media screen and (max-width: 2000px) {
+
+    nav {
+        position: relative;
+        @include flex-align-column(center);
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        border: none;
+    }
+
+    .delete-all-button, .fa-bars {
+        color: $secondary-color;
+        position: absolute;
+        top: 25px;
+    }
+
+    .delete-all-button {
+        right: 0;
+    }
+
+    .fa-bars {
+        right: 20px;
+        display: block;
+    }
+
+    #cards-holder {
+        margin-top: 20px;
+    }
+}

@@ -12,6 +12,15 @@ posts.forEach(post => {
 var cardsRemoverBtn = document.getElementById("remover");
 cardsRemoverBtn.addEventListener("click", removeAllCards);
 
+// far apparire l'hamburger menu
+var menu = document.getElementById("menu");
+menu.addEventListener("click", appearMenu);
+
+
+// far scomparire l'hamburger menu
+var closeMenu = document.getElementById("close");
+closeMenu.addEventListener("click", closeMenu);
+
 
 
 // funzioni
@@ -80,6 +89,7 @@ function removeAllCards() {		// rimuove tutte le cards
     document.getElementById("cards-holder").innerHTML = "";
 }
 
+
 function bgAssign(divCard, dataSku) {		// assegna la classe card e il colore di sfondo in base al numero
 	switch (dataSku) {
 		case '7':
@@ -92,4 +102,26 @@ function bgAssign(divCard, dataSku) {		// assegna la classe card e il colore di 
 		divCard.setAttribute('class', 'card green');
 			break;
 	}
+}
+
+
+function appearMenu() {		// fa apparire l'hamburger menu
+	var cardNav = document.getElementById("card__nav");
+	cardNav.classList.add("visible-flex");
+
+	var close = document.getElementById("close");
+	close.classList.remove("not-active");
+
+	menu.classList.add('not-active');
+}
+
+
+function closeMenu() {		// fa scomparire l'hamburger menu
+	var cardNav = document.getElementById("card__nav");
+	cardNav.classList.remove("visible-flex");
+
+	var menu = document.getElementById("menu");
+	menu.classList.remove("not-active");
+
+	closeMenu.classList.remove('not-active');
 }

@@ -35,6 +35,14 @@ li {
     background-color: $green-color;
 }
 
-.delete-all-button, .red, .green, .yellow, .delete-button {
+.red, .green, .yellow, .delete-button, .delete-all-button, .fa-trash-alt, .fa-bars {
     transition: all 0.5s;
+}
+
+.visible-flex {
+    display: flex !important;
+}
+
+.not-active {
+    display: none !important;
 }
