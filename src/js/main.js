@@ -45,10 +45,8 @@ function ajaxCall(dataSku) {		// ajax che recupera le info della card, se non e'
                 divCard.setAttribute('data-sku', dataSku);
                 divCard.setAttribute('class', 'card');
 
-                var cardButton = document.createElement("button");
-                cardButton.setAttribute('class', 'remove');
-                var cardBtnText = document.createTextNode('X');
-                cardButton.appendChild(cardBtnText);
+                var cardButton = document.createElement("i");
+                cardButton.setAttribute('class', 'fas fa-times delete-button');
                 divCard.appendChild(cardButton);
 
 				cardElement(divCard, "h2", post.title);

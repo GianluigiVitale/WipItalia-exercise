@@ -2,19 +2,22 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <title>WipItalia-esercizio</title>
         <link rel="stylesheet" href="dist/style.css">
     </head>
     <body>
-        <ul id="card-trigger">
-            <li><a href="javascript:void(0)" data-sku="7">post 7</a></li>
-            <li><a href="javascript:void(0)" data-sku="3">post 3</a></li>
-            <li><a href="javascript:void(0)" data-sku="2">post 2</a></li>
-        </ul>
-
-        <a href="javascript:void(0)" id="remover">remove cards</a>
-
-        <div id="cards-holder"></div>
+        <nav>
+            <ul id="card-trigger">
+                <li><a href="javascript:void(0)" data-sku="7">post 7</a></li>
+                <li><a href="javascript:void(0)" data-sku="3">post 3</a></li>
+                <li><a href="javascript:void(0)" data-sku="2">post 2</a></li>
+            </ul>
+            <i class="far fa-times-circle delete-all-button" id="remover"></i>
+        </nav>
+        <main>
+            <div id="cards-holder"></div>
+        </main>
 
 
         <script src="dist/main.js" charset="utf-8"></script>
